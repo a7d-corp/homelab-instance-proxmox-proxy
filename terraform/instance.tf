@@ -57,8 +57,7 @@ module "instance_cloudinit_template" {
 }
 
 module "instance" {
-  source = "github.com/glitchcrab/terraform-module-proxmox-instance?ref=update-module"
-  #source     = "github.com/glitchcrab/terraform-module-proxmox-instance"
+  source     = "github.com/glitchcrab/terraform-module-proxmox-instance"
   depends_on = [module.instance_cloudinit_template]
 
   pve_instance_name        = "${local.instance_name}.${var.instance_domain}"
